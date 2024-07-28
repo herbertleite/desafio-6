@@ -8,10 +8,10 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Titulo</th>
-                <th>Descricao</th>
-                <th>Concluida</th>
-                <th>Acoes</th>
+                <th>Título</th>
+                <th>Descrição</th>
+                <th>Concluída</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -20,7 +20,7 @@
                     <td>${tarefa.id}</td>
                     <td>${tarefa.titulo}</td>
                     <td>${tarefa.descricao}</td>
-                    <td><c:if test="${tarefa.concluida}">Sim</c:if><c:if test="${!tarefa.concluida}">Nao</c:if></td>
+                    <td><c:if test="${tarefa.concluida}">Sim</c:if><c:if test="${!tarefa.concluida}">Não</c:if></td>
                     <td>
                         <a href="/tarefas/${tarefa.id}" class="btn btn-info btn-group">Visualizar</a>
                         

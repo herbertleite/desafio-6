@@ -11,7 +11,7 @@
                 <th>Titulo</th>
                 <th>Descricao</th>
                 <th>Concluida</th>
-                <th>Acoes</th>
+                <th>Acaoes</th>
             </tr>
         </thead>
         <tbody>
