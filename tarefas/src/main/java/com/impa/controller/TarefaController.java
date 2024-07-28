@@ -107,6 +107,7 @@ public class TarefaController {
 
     @PostMapping("/novo")
     public String criarTarefa(@ModelAttribute Tarefa tarefa) {
+        tarefa.setDataCriacao(new Date());
         tarefaService.cadastrarTarefa(tarefa);
         return "redirect:/";
     }

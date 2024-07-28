@@ -1,0 +1,49 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="header.jsp" %>
+<div class="container">
+    <h1>Lista de Tarefas</h1>
+    <!-- Botão Nova Tarefa -->
+    <a href="/novo" class="btn btn-primary spaced-button">Nova Tarefa</a>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>Descricao</th>
+                <th>Concluida</th>
+                <th>Acaoes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach var="tarefa" items="${tarefas}">
+                <tr>
+                    <td>${tarefa.id}</td>
+                    <td>${tarefa.titulo}</td>
+                    <td>${tarefa.descricao}</td>
+                    <td><c:if test="${tarefa.concluida}">Sim</c:if><c:if test="${!tarefa.concluida}">Nao</c:if></td>
+                    <td>
+                        <a href="/tarefas/${tarefa.id}" class="btn btn-info btn-group">Visualizar</a>
+                        
+                        <a href="/tarefas/${tarefa.id}/editar" class="btn btn-warning btn-group">Editar</a>
+                        
+                        <form action="/tarefas/${tarefa.id}/deletar" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-danger btn-group">Deletar</button>
+                        </form>
+                        
+                        <form action="/tarefas/${tarefa.id}/concluir" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-success btn-group"
+                                    <c:if test="${tarefa.concluida}">disabled</c:if>>Concluir</button>
+                        </form>
+                    </td>
+                </tr>
+            </c:forEach>
+        </tbody> 
+    </table>
+    <!-- Adiciona um espaço extra para evitar sobreposição com o rodapé -->
+    <div style="margin-bottom: 60px;"></div>
+</div>
+<!-- Incluir o Rodapé -->
+<%@ include file="footer.jsp" %>
+</body>
+</html>

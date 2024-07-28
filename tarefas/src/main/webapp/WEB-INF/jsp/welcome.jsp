@@ -2,17 +2,16 @@
 <%@ include file="header.jsp" %>
 <div class="container">
     <h1>Lista de Tarefas</h1>
-    <!-- Botão Nova Tarefa -->
     <a href="/novo" class="btn btn-primary spaced-button">Nova Tarefa</a>
 
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>T&iacute;tulo</th> 
-                <th>Descri&ccedil;&atilde;o</th> 
-                <th>Conclu&iacute;da</th> 
-                <th>A&ccedil;&otilde;es</th> 
+                <th>Titulo</th>
+                <th>Descricao</th>
+                <th>Concluida</th>
+                <th>Acaoes</th>
             </tr>
         </thead>
         <tbody>
@@ -21,7 +20,7 @@
                     <td>${tarefa.id}</td>
                     <td>${tarefa.titulo}</td>
                     <td>${tarefa.descricao}</td>
-                    <td><c:if test="${tarefa.concluida}">Sim</c:if><c:if test="${!tarefa.concluida}">N&atilde;o</c:if></td>
+                    <td><c:if test="${tarefa.concluida}">Sim</c:if><c:if test="${!tarefa.concluida}">Nao</c:if></td>
                     <td>
                         <a href="/tarefas/${tarefa.id}" class="btn btn-info btn-group">Visualizar</a>
                         
@@ -40,8 +39,8 @@
             </c:forEach>
         </tbody> 
     </table>
+    <div style="margin-bottom: 70px;"></div>
 </div>
-<!-- Incluir o Rodapé -->
 <%@ include file="footer.jsp" %>
 </body>
 </html>
