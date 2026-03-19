@@ -39,6 +39,10 @@ nbdist/
 
 # Eclipse
 .settings/
+.metadata/
+.classpath
+.project
+*.launch
 bin/
 tmp/
 *.bak
